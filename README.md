@@ -21,7 +21,7 @@ Esta é uma API simples para gerenciar uma biblioteca de livros, desenvolvida us
 
 ## Diagrama do projeto da API
 
-![Diagrama da API](./imagens/auth-api-diagram.png)
+![Diagrama da API](https://github.com/hav0kinho/auth-api/blob/main/images/auth-api-diagram.png)
 
 ## Instalação
 
