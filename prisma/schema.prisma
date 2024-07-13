@@ -6,6 +6,32 @@ generator client {
 }
 
 datasource db {
-  provider = "postgresql"
+  provider = "sqlite"
   url      = env("DATABASE_URL")
+}
+
+//coluna | tipo(Int, String, DateTime?, etc) | regras_e_tipos_bancoDeDados[] (@id, @default(autoincrement()), @db.VarChar(63), @db.UnsignedInt)
+
+model User {
+  id        Int      @id @default(autoincrement())
+  username  String
+  password  String
+  books     Book[]
+  createdAt DateTime
+  updatedAt DateTime
+
+  @@map("users")
+}
+
+model Book {
+  id            Int      @id @default(autoincrement())
+  title         String
+  author        String
+  publishedDate DateTime
+  userId        Int
+  user          User     @relation(fields: [userId], references: [id]) //@relation(fields: [atributoDaModel], references: [atributoDaModelReferenciada])
+  createdAt     DateTime
+  updatedAt     DateTime
+
+  @@map("books")
 }
