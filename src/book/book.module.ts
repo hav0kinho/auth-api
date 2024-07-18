@@ -2,7 +2,6 @@ import { Module } from '@nestjs/common';
 import { BookController } from './book.controller';
 import { BookService } from './book.service';
 import { PrismaModule } from 'src/prisma/prisma.module';
-import { PrismaService } from 'src/prisma/prisma.service';
 
 @Module({
   imports: [PrismaModule], // Oque ele importa?
